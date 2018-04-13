@@ -1,0 +1,428 @@
+<!doctype html>
+<html>
+<head>
+<title>index.htm</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link rel="stylesheet" href="style.css">
+ 
+
+
+<script src="labScript.js"></script>
+	
+<!--internal style is defined after the link to the external style sheet
+例如：    <head>
+			<link rel="stylesheet" type="text/css" href="mystyle.css">
+			<style>
+				h1 {
+    				color: orange;
+    				}
+			</style>
+		</head>   則文字的顏色就會顯示橘色，但如果相反是，internal 的 CSS定義在link rel="stylesheet" type="text/css" href="mystyle.css前面的話，則文字就不會是橘色-->
+
+
+	
+
+<!--重要重要 ＣＳＳ規範-->
+<!--若是同時有inline和internal 或external的style，則html最優先的是inline，inline的css設定會覆寫internal 或external的<-->
+<!--What style will be used when there is more than one style specified for an HTML element?
+
+Generally speaking we can say that all the styles will "cascade" into a new "virtual" style sheet by the following rules, where number one has the highest priority:
+
+Inline style (inside an HTML element)
+External and internal style sheets (in the head section)
+Browser default
+So, an inline style (inside a specific HTML element) has the highest priority, which means that it will override a style defined inside the <head> tag, or in an external style sheet, or a browser default value.-->
+
+<!-- background-attachment: fixed;  這個是指當網頁往下滑動時，背景圖片依然會跟著往下滑動-->
+
+
+
+
+<!--The element will then take up the specified width, and the remaining space will be split equally between the left and right margins, 當 margin: auto; 設置為auto時， 內容佔據一定寬度，並在中間，剩下的寬度會平分成左右，-->
+
+
+	
+<!--網頁有需要輪播圖片，常常會使用 Flash 來製作，但如果你只是要單純輪播，沒有需要什麼特殊效果，那麼你可以簡單的使用 JavaScript 來完成他。這個例子來教你怎麼「循序輪播」與「亂數輪播」圖片s。-->
+<!--「循序輪播」為 randomImg()   
+「亂數輪播」為 sequentialImg()-->
+</head>
+<body onload="sequentialImg();question()">
+
+<h1 style="text-align:center;color:Peru">林貞妮的個人網頁</h1>
+
+<br>
+
+<h3 id="color"> 姓名:林貞妮</h3> 
+	<button type="button" onclick="document.getElementById('color').style.color = 'aqua'">change name's color</button>
+	<button type="button" onclick="document.getElementById('color').style.backgroundColor = 'Orchid'">change name's background-color</button>
+
+	<br>
+	<img src="/Users/jennielin/Pictures/selife/IMG_7273.JPG" alt="我自己" style="width:175px;height:250px">
+
+	<p id="lin">照片註解</p>
+
+	<button type="button" onclick="myself()">顯示拍攝地點</button>
+
+	<div align="center">
+		<p>請輸入您的名字，並按下enter鍵</p>
+		<input type="text" id="111" onchange="alert(document.getElementById('111').value= '歡迎光臨' + ' ' + this.value )">
+	</div>
+	
+<!--An id name cannot start with a number!-->
+	
+<h3 id="asd">性別:女</h3> <!-- female -->
+	<button onclick="gemini()">中文轉英文</button>
+	<button onclick="gemini1()">英文轉中文</button>
+		<br>
+ <img src="http://ncs.epa.gov.tw/noise/images/left-A/tw/4.png" alt="New Taipei city" style="width:180; height=300" usemap="#New Taipei Map">
+  <bdo dir="rtl" title="New Taipei"><i>市北台:地住居</i></bdo>
+
+<map name="New Taipei Map">
+  <area shape="rect" coords="0,0,180,270" alt="new taipei" href="http://hdg.tosaint.com/attach/1/4664791134.jpg">
+
+</map>
+
+
+<h3>E-mail:sssss71641303@gmail.com</h3>
+<h3>聯絡電話:0970652012</h3>
+<p style="font-size:130%"><a href=#M8>跳至興趣</a></p>
+
+
+
+
+
+<hr>
+
+<div>
+	<h3>學歷</h3>
+
+	<ol type="I" >
+	
+  
+		<li>大學:<a href="http://mis2.nccu.edu.tw/" target="_blank">國立政治大學資訊管理學系</a>(ing~)</li>
+			<img src="http://g.udn.com.tw/upfiles/B_SA/sammasliu/PSN_PHOTO/617/f_11865617_1.jpg" alt="政大校徽" style="width:150px; height=150px">
+  
+	</ol>
+</div>
+<hr>
+
+<h3 id="M8">興趣<h3>
+
+<ul style="list-style-type:square">
+  <li>旅遊</li>
+  <li>看小說</li>
+  <li>游泳</li> 
+     <ul style="list-style-type:square">
+        <li>蛙式</li>
+        <li>自由式</li>
+     </ul>	 
+</ul>
+
+<h3 title="Gemini">星座:<mark>天秤座</mark></h3>
+<h3>生日:86/10/10</h3>
+<h3>血型:Ｂ型</h3>
+
+<h3>自我期許:</h3>
+<pre style="font-size:150%"><b>  希望兼顧<ins>專業知識、軟實力培養</ins>，有個充實的大學生活。</b></pre>
+
+<div style="border:3px solid #D8BFD8"; padding:45px; margin:15px">
+<h3  id="t04">最喜歡的名言集錦</h3>
+  <p><q>如果自由意味著甚麼，那就是向大眾述說他們不想聽的話的權利</q>----George Orwell</p>
+  <p><q>萬物一般，眾生平等。聖賢畜生，一視同仁。漢人契丹，亦幻亦真。恩怨榮辱，俱在灰塵。</q>----天龍八部</p>
+  <p><q>孤村落日殘霞，輕煙老樹寒鴉，一點飛鴻影下，青山綠水，白草紅葉黃花。</q></p><pre> ----<cite>天淨沙<sub>秋</sub></cite>  白樸</pre>
+  <p id="222"></p>
+  <p id="333"></p> 
+<!-- 純粹的名詞堆疊，卻詠嘆出悠閒寧靜的秋晚時節，令人神往不已。 -->
+  </div>
+  
+   
+  
+  
+  
+  
+<h3>座右銘</h3>
+<p onmouseout="this.style.backgroundColor='#7B68EE';this.style.fontSize='170%'" >尼采名言</p>
+<blockquote onmouseover="this.style.fontSize='150%';this.style.color='#008000'"   cite="http://www.juzimi.com/ju/72192">對待生命你不妨大膽冒險一點,因為好歹你要失去它。如果這世界上真有奇蹟，那只是努力的另一個名字。生命中最難的階段不是沒有人懂你，而是你不懂你自己。</blockquote>
+
+<iframe style="width:600px;height:450px" name="尼采"></iframe>
+
+<p><a href="https://zh.wikipedia.org/wiki/%E5%BC%97%E9%87%8C%E5%BE%B7%E9%87%8C%E5%B8%8C%C2%B7%E5%B0%BC%E9%87%87" target="尼采">尼采 維基百科</a></p>
+
+<hr>
+
+
+<h3>最喜歡的電視劇:<mark>瑯琊榜</mark></h3>
+
+	<img id="funny1" src="http://www.inside.com.tw/wp-content/uploads/2016/01/Screenshot-2016-01-28-17.45.26.png" alt="瑯琊榜" style="width:500px;height:300px">
+	<img id="funny" src="https://i.ytimg.com/vi/HmVUCgsSdX8/maxresdefault.jpg" alt="瑯琊榜" style="float:right;width:460px;height:280px">
+		<br>
+		
+		<button onclick="document.getElementById('funny1').src = 'http://img.154155.com/edsuploadpicnpic7/cn/zixun/zh-chs/2015-10/22/e9c7a7c6055a45e4b802adbb2c1fce59.jpg'">點我!!!</button>
+		<button onclick="document.getElementById('funny').src = 'http://www.people.com.cn/mediafile/pic/20151107/75/17552243317530173739.jpg'">點我!!!</button>
+
+
+
+<table style="width:70%" align="center">
+<caption>飲食偏好</caption>
+   <tr>
+     <th>喜歡的食物</th>
+	 <th>喜歡的飲料</th>
+   </tr>
+   
+   <tr>
+     <td>芒果</td>
+	 <td>奶茶</td>
+   </tr>
+
+   <tr>
+     <td>荔枝</td>
+	 <td rowspan="2">可可</td>
+   </tr>
+
+   <tr>
+     <td>炒飯</td>
+	 
+   </tr>
+</table>
+
+
+<hr>
+
+
+<dl>
+  <dt>芒果</dt>
+  <dd>---一種熱帶水果，果肉軟嫩香甜<i>juicy~。</i></dd>
+  <dt>荔枝</dt>
+  <dd>---一種熱帶水果，果肉白色，略顯透明，多汁甘美。</dd>
+</dl>
+
+
+	<div align="center">
+		<input id="celsius" type="text" value="0" style="size:150px;color:DarkSlateBlue">
+		<input  type="submit" value="攝氏轉華氏" onclick="c()" >
+<br>
+		<input id="fahrenheit" type="text" value="0" style="size:150px;color:DarkSlateBlue">
+		<input  type="submit" value="華氏轉攝氏" onclick="f()">	
+	</div>
+	
+
+
+<hr>
+
+
+	
+	<h4>以下是NBA中相當有名的5位球星</h4>
+	
+	<h4>讓他們的名字大小寫自由轉換吧!</h4>
+	<button type="button" onclick="player()">轉成大寫</button>
+	<button type="button" onclick="player1()">轉成小寫</button>
+	
+	<pre id="nba" style="font-size:160%;font-family:Georgia">
+Tim Duncan
+Stephen Curry
+Jeremy Lin
+LeBron James
+Kiwhi Leonard
+Russell Westbrook
+Kevin Durant
+Camelo Anthony
+Anthony Davis
+Pau Gasol
+</pre>
+
+
+	
+<br>
+<br>	
+<br>	
+<br>
+		
+
+
+
+
+<div id="mydiv"></div>
+	
+<!--輪播陣列中指定的圖檔 -->
+	  
+
+<button type="button" onclick="sss()">九九乘法表</button> 
+
+
+
+	<hr>
+	
+
+
+<!-- 九九乘法表 -->
+	
+<p id="123"></p>	
+		
+		<script type="text/javascript">
+			var i;
+			var j;
+			
+				function sss()
+				{   var x = "";
+					x += "<table>";
+					
+					for (i=1;i<=9;i++)
+					{	
+						x += "<tr>"
+						for(j=1;j<=9;j++)
+						{
+							x += "<td>" + i + "*" + j + "=" + i*j + "</td>" ;
+							
+						}
+					
+							x += "</tr>" ;
+						
+					}
+					x += "</table>"
+					
+					document.getElementById("123").innerHTML = x;
+				}
+				
+		</script>	
+	
+	
+<!-- 隨機出題  -->
+	
+	
+	<h5>練習九九乘法表</h5>
+	<p id="ran"></p>
+	<input type="text" style="width:120px;height:20px" id="answ">
+	<input type="button" style="width:60px;height:20px" value="提交答案"  onclick="answer()">
+	<p id="smile"></p>
+	
+	
+	<script type="text/javascript">
+		var k = Math.floor(Math.random()*9)+1;
+		var p = Math.floor(Math.random()*9)+1;
+	function question()
+	{
+
+		document.getElementById("ran").innerHTML = k + "*" + p + "=" + "?";
+	
+	
+	}
+	function answer()
+	{
+		var t = Number(document.getElementById("answ").value);
+			if (t == k*p)
+			{	
+			    document.getElementById("smile").innerHTML = "<img src='11.jpg' style='height:250px;width:250px'>"
+	
+			
+			}
+			else{
+				
+				document.getElementById("smile").innerHTML = "<img src='12.jpg' style='height:350px;width:250px'>"
+			
+			
+			
+			
+			}
+
+	}
+	
+	
+
+	
+	
+	
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+<br>	
+<br>
+<br>
+<br>
+<br>	
+	
+	
+	
+	
+	
+	
+	
+	
+<p id="president"></p>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<script>
+		function myself(){
+			document.getElementById("lin").innerHTML = "拍攝地點:台北"
+		}
+		function c(){
+			var t = parseInt(document.getElementById('celsius').value);
+			document.getElementById("fahrenheit").value = t*(9/5)+32;
+			alert(t*(9/5)+32)
+		}
+		function gemini(){
+			document.getElementById("asd").innerHTML="gender:female"
+		}
+		function gemini1(){
+			document.getElementById("asd").innerHTML="性別:女"
+		}
+		
+		
+		
+	</script>
+	
+	<script>
+		var yyy = "孤村落日殘霞輕煙老樹寒鴉一點飛鴻影下青山綠水白草紅葉黃花";
+		document.getElementById("222").innerHTML = "以上這首曲僅僅" + yyy.length + "字，因此屬元曲的小令";
+	
+	</script>
+	
+	<script>
+		var ccc = "萬物一般眾生平等聖賢畜生一視同仁漢人契丹亦幻亦真恩怨榮辱俱在灰塵";
+		document.getElementById("333").innerHTML = "第二句第19、20個字是什麼呢? " + ccc.slice(18,20) 
+	</script>
+	
+	<script>
+	function player(){
+	
+		var ssd = document.getElementById("nba").innerHTML;
+		document.getElementById("nba").innerHTML = ssd.toUpperCase()
+	}
+	function player1(){
+	
+		var ssd1 = document.getElementById("nba").innerHTML;
+		document.getElementById("nba").innerHTML = ssd1.toLowerCase()
+	}
+	</script>
+	
+	<script>
+		var kkk = "白宮新主人:唐納 川普", jjj = "(能不嘆氣?唉~~)";
+		document.getElementById("president").innerHTML = kkk.concat(" ",jjj)
+	</script>
+
+
+
+</body>
+</html>
